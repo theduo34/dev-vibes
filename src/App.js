@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Col, Row } from "antd";
 import Home from "./components/Pages/Home";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const App = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -14,10 +14,10 @@ const App = () => {
     };
 
     const menuListedItems = [
-        { label: 'Home', key: 'home', children: <Home />},
-        { label: 'About', key: 'about', children: "About"},
-        { label: 'Projects', key: 'projects', children: "Projects"},
-        { label: 'Contact', key: 'contact', children: "Contact"}
+        { label: 'Home', key: 'home', children: <Home /> },
+        { label: 'About', key: 'about', children: "About" },
+        { label: 'Projects', key: 'projects', children: "Projects" },
+        { label: 'Contact', key: 'contact', children: "Contact" }
     ];
 
     const handleMenuClick = (key) => {
@@ -25,18 +25,10 @@ const App = () => {
         setIsMobileMenuOpen(false);
 
         let path = "";
-        if(key === 'home') {
-            path = "/";
-        }
-        else if (key === 'about') {
-            path = "/about";
-        }
-        else if (key === 'projects') {
-            path = "/projects";
-        }
-        else if (key === 'contact') {
-            path = "/contact";
-        }
+        if (key === 'home') path = "/";
+        else if (key === 'about') path = "/about";
+        else if (key === 'projects') path = "/projects";
+        else if (key === 'contact') path = "/contact";
 
         navigate(path);
     };
@@ -55,12 +47,36 @@ const App = () => {
 
     return (
         <>
-            <nav className="bg-dev-950">
-                <div className="mx-auto px-2 sm:px-6 lg:px-8">
-                    <div className="relative flex h-16 items-center justify-between">
-                        {/* Logo */}
-                        <div className="flex items-center font-semibold  text-white">
-                            ES
+            <nav className="shadow-md px-4 md:px-16">
+                <div className="mx-auto px-2 sm:px-6 lg:px-16 ">
+                    <div className="relative flex h-16 items-center">
+                        <div className="flex items-center mr-16">
+                            {/* Logo */}
+                            <div className="flex items-center font-bold uppercase">
+                               <span className={"text-blue-400"}> Emma</span>nuel.
+                            </div>
+                        </div>
+
+                        {/* Desktop menu items pushed to the right */}
+                        <div className="hidden sm:flex flex-1 items-center sm:items-stretch ml-16">
+                            <div className="flex space-x-4">
+                                {menuListedItems.map((item) => (
+                                    <div
+                                        key={item.key}
+                                        className={`rounded-md px-4 py-1.5 text-md font-medium cursor-pointer ${
+                                            activeItem === item.key ? 'items-center shadow-lg' : 'hover:text-blue-600 hover:text-shadow-md'
+                                        }`}
+                                        onClick={() => handleMenuClick(item.key)}
+                                    >
+                                        {item.label}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Let's Talk button for desktop */}
+                        <div className="hidden md:block items-center px-3 py-1 font-semibold bg-blue-400 hover:bg-blue-500 rounded-md hover:shadow-md">
+                            <button>Let's Talk</button>
                         </div>
 
                         {/* Mobile menu button */}
@@ -72,28 +88,12 @@ const App = () => {
                                 aria-expanded={isMobileMenuOpen}
                                 onClick={toggleMobileMenu}
                             >
-                                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
+                                     stroke="currentColor" aria-hidden="true">
+                                    <path strokeLinecap="round" strokeLinejoin="round"
+                                          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                                 </svg>
                             </button>
-                        </div>
-
-                        <div className="flex flex-1 items-center justify-end sm:items-stretch sm:justify-end">
-                            <div className="hidden sm:block">
-                                <div className="flex space-x-4">
-                                    {menuListedItems.map((item) => (
-                                        <div
-                                            key={item.key}
-                                            className={`rounded-md px-4 py-2 text-sm font-medium cursor-pointer ${
-                                                activeItem === item.key ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'
-                                            }`}
-                                            onClick={() => handleMenuClick(item.key)}
-                                        >
-                                            {item.label}
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -116,6 +116,11 @@ const App = () => {
                                     {item.label}
                                 </div>
                             ))}
+
+                            {/* Let's Talk button for mobile */}
+                            <div className="block md:hidden mt-4 px-3 py-2 text-center font-semibold bg-blue-400 hover:bg-blue-500 hover:shadow-md rounded-md">
+                                <button>Let's Talk</button>
+                            </div>
                         </div>
                     </div>
                 )}
@@ -125,7 +130,7 @@ const App = () => {
                 <Col span={24}>
                     <Col
                         sm={{ span: 24 }}
-                        md={{ span: 16, offset: 4 }}
+                        md={{ span: 20, offset: 2 }}
                         className="items-center p-2 md:p-4"
                     >
                         {menuListedItems.map((item) => (
