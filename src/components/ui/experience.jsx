@@ -8,8 +8,8 @@ export const ExperienceCard = ({ title, description, imageSrc }) => {
         <img
           alt={title}
           loading="lazy"
-          width={128}
-          height={128}
+          width={120}
+          height={120}
           decoding="async"
           className="w-32 h-32 rounded-full object-cover"
           style={{ color: "transparent" }}

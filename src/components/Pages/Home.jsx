@@ -1,5 +1,5 @@
 import React from 'react';
-import {FadeButton, MyButton} from "../ui/button";
+import {FadeButton} from "../ui/button";
 
 const Home = ({onClick}) => {
     const handleResumeClick = () => {
@@ -20,7 +20,7 @@ const Home = ({onClick}) => {
                     experiences that drive engagement and business success.
                 </p>
 
-                <div className="flex items-center font-semibold pt-8  gap-8">
+                <div className="w-full flex items-center justify-between font-semibold pt-8 gap-0 lg:gap-8">
                     <FadeButton title={"See my works"} onClick={onClick} />
                     <FadeButton title={'See my resume'} onClick={handleResumeClick}/>
                 </div>
