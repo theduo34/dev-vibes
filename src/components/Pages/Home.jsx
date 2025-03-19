@@ -25,7 +25,7 @@ const Home = ({onClick}) => {
             <div className="flex items-center justify-center rounded-full border-animate">
                 <img
                   className="rounded-full w-96 h-96"
-                  src="/images/picture2%20(2).png"
+                  src="/images/profilepics/picture2%20(2).png"
                   alt="Profile"
                 />
             </div>

@@ -2,7 +2,7 @@ import {InstagramOutlined, LinkedinOutlined, MediumOutlined, TwitterOutlined} fr
 import React from "react";
 
 
-const Socials = () => {
+export const Socials = () => {
   return (
     <div className="items-center flex space-x-4 pt-4">
       <p
@@ -20,4 +20,3 @@ const Socials = () => {
     </div>
   )
 }
-export default Socials;
