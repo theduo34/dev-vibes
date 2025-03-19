@@ -5,6 +5,7 @@ import { FadeButton } from "./components/ui/button";
 import Experience from "./components/Pages/Experience";
 import About from "./components/Pages/About";
 import ContactMe from "./components/Pages/ContactMe";
+import FooterPage from "./components/Pages/Footer";
 
 const App = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -63,7 +64,7 @@ const App = () => {
           </nav>
 
           {/* Page Content */}
-          <div className="relative w-full items-center px-4 lg:px-[14%] pt-24 z-10">
+          <div className="relative w-full items-center px-4 lg:px-[14%] pt-24 z-10 space-y-10">
               <section id="home">
                   <Home onClick={() => scrollTo("projects")} />
               </section>
@@ -78,6 +79,9 @@ const App = () => {
               </section>
               <section id={"contactMe"}>
                   <ContactMe />
+              </section>
+              <section id={"footer"}>
+                  <FooterPage/>
               </section>
           </div>
 

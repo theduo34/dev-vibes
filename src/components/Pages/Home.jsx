@@ -1,7 +1,10 @@
 import React from 'react';
-import {MyButton} from "../ui/button";
+import {FadeButton, MyButton} from "../ui/button";
 
 const Home = ({onClick}) => {
+    const handleResumeClick = () => {
+        window.location.href = "https://drive.google.com/file/d/1gNPEfSf05GFnpXTLHfQpEQBwrzhxqsO8/view?usp=drive_link";
+    }
     return (
         <div
             className="w-full flex items-center justify-between flex-col md:flex-row gap-8 py-[8%]">
@@ -18,15 +21,17 @@ const Home = ({onClick}) => {
                 </p>
 
                 <div className="flex items-center font-semibold pt-8  gap-8">
-                    <MyButton title={'See my works'} onClick={onClick}/>
+                    <FadeButton title={"See my works"} onClick={onClick} />
+                    <FadeButton title={'See my resume'} onClick={handleResumeClick}/>
                 </div>
             </div>
 
-            <div className="flex items-center justify-center rounded-full border-animate">
+            <div className="flex items-center justify-center w-96 h-96 rounded-full border overflow-hidden">
                 <img
-                  className="rounded-full w-96 h-96"
-                  src="/images/profilepics/picture2%20(2).png"
+                  className="w-full h-full"
+                  src="/images/profilepics/pp.png"
                   alt="Profile"
+
                 />
             </div>
         </div>
