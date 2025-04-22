@@ -35,7 +35,7 @@ const About = () => {
     <div>
       <h3 className={"flex items-center justify-center md:justify-start leading-normal font-mono text-2xl lg:text-4xl"}>
        <span className={"font-semibold leading-tight"}>
-         <span className={"font-mono"}>About  me;</span>
+         <span className={"font-mono"}>My Core Strengths in Action</span>
        </span>
       </h3>
 

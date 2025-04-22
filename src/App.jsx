@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import Home from "./components/Pages/Home";
 import Projects from "./components/Pages/Projects";
 import { FadeButton } from "./components/ui/button";
@@ -6,23 +6,9 @@ import Experience from "./components/Pages/Experience";
 import About from "./components/Pages/About";
 import ContactMe from "./components/Pages/ContactMe";
 import FooterPage from "./components/Pages/Footer";
+import WhoAmI from "./components/Pages/WhoAmI";
 
 const App = () => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const mobileMenuRef = useRef(null);
-
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
-                setIsMobileMenuOpen(false);
-            }
-        };
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [mobileMenuRef]);
-
     const scrollTo = (sectionName) => {
         const section = document.getElementById(sectionName);
         if (section) {
@@ -56,8 +42,10 @@ const App = () => {
           {/* Navbar */}
           <nav className="shadow-md w-full px-4 lg:px-[14%] fixed top-0 z-50 border-b border-gray-700 bg-opacity-50 backdrop-blur-md">
               <div className="w-full flex items-center justify-between h-20">
-                  <div className="flex items-center font-bold text-lg uppercase">
-                      <span className="text-purple-400">Emma</span>nuel.S
+                  <div className="flex items-center font-bold text-lg uppercase cursor-pointer"
+                       onClick={() => window.location.reload()}
+                  >
+                      &lt;Emmanuel<span className="text-purple-400"></span> /&gt;
                   </div>
                   <FadeButton title={"Let's talk"} onClick={() => scrollTo("contactMe")} />
               </div>
@@ -66,19 +54,22 @@ const App = () => {
           {/* Page Content */}
           <div className="relative w-full items-center px-4 lg:px-[14%] pt-24 z-10 space-y-10">
               <section id="home">
-                  <Home onClick={() => scrollTo("projects")} />
+                  <Home onClick={() => scrollTo("projects")}/>
+              </section>
+              <section id={"whoIam"}>
+                  <WhoAmI/>
               </section>
               <section id={"about"}>
-                  <About />
+                  <About/>
               </section>
               <section id="projects">
-                  <Projects />
+                  <Projects/>
               </section>
               <section id={"experience"}>
-                  <Experience />
+                  <Experience/>
               </section>
               <section id={"contactMe"}>
-                  <ContactMe />
+                  <ContactMe/>
               </section>
               <section id={"footer"}>
                   <FooterPage/>

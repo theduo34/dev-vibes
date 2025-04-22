@@ -4,7 +4,7 @@ const experiences = [
   {
     title: "Doltech Ltd | Frontend Developer",
     description:
-      "Designed and implemented the UI/UX for a cashless toll system, enhancing efficiency with AI-powered solutions.",
+      "Designed and implemented the UI/UX for a cashless toll system, enhancing efficiency with IoT-powered solutions.",
     imageSrc: "frontend",
   },
   {
@@ -16,7 +16,7 @@ const experiences = [
   {
     title: "Goodwill Systems | Frontend Developer",
     description:
-      "Implemented SEO optimization techniques, increasing search engine rankings and user engagement.",
+      "Built a user-friendly interface and integrated RTK Query for efficient and seamless data fetching.",
     imageSrc: "frontend",
   },
 ];
