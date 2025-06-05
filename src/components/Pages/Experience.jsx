@@ -14,7 +14,7 @@ const experiences = [
     imageSrc: "frontend",
   },
   {
-    title: "Goodwill Systems | Frontend Developer",
+    title: "Goodwill Systems | Fullstack Focus",
     description:
       "Built a user-friendly interface and integrated RTK Query for efficient and seamless data fetching.",
     imageSrc: "frontend",

@@ -4,7 +4,7 @@ import {FadeButton} from "../ui/button";
 const Home = ({onClick}) => {
     const handleResumeClick = () => {
         window.open(
-          "https://drive.google.com/file/d/1gNPEfSf05GFnpXTLHfQpEQBwrzhxqsO8/view?usp=drive_link",
+          "https://drive.google.com/file/d/1xEc6Ipf-c3DwG7ZxRo__9IJZVavPGOZ-/view?usp=sharing",
           "_blank",
           "noopener,noreferrer"
         );
